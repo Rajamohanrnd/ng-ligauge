@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="GaugeDemoApp">
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="d3.js"></script>
+    <script src="script.js"></script>
+    <script src="ng-ligauge.js"></script>
+  </head>
+
+  <body>
+    <div class="item" style="width: 100%">
+                          <div class="panel panel-primary" ng-controller="GaugeCtrl">
+                              <div class="panel-heading">
+Linear Gauge
+                              </div>
+                              <div class="panel-body text-center">
+                                  Units:<input style="width:50px;height: 20px" ng-model="unit" type="number" />
+                                  Major Unit:<input style="width:50px;height: 20px" ng-model="majorUnit" type="number" />
+                                  <button ng-click="changeOptions()">Change options</button>
+                                  <ui-gauge value="value" options="options"></ui-gauge>
+                              </div>
+                          </div>
+                      </div>
+  </body>
+
+</html>
