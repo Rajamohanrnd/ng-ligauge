@@ -1,11 +1,9 @@
 'use strict';
 (function () {
     var ui = {};
-    var Gauge = function(element, value, options) {
+    var Gauge = function(element, options) {
         this.element = element;
-        this.value = value;
         this.options = options;
-        this.inDrag = false;
     };
 
     Gauge.prototype.drawGauge = function() {
@@ -196,11 +194,9 @@
         return {
             restrict: 'E',
             scope: {
-                value: '=',
                 options: '='
             },
             link: function(scope, element) {
-                scope.value = scope.value || 0;
                 var defaultOptions = {
                     size: 200,
                     unit: "100",
@@ -223,18 +219,17 @@
                     markers : []
                 }
                 scope.options = angular.merge(defaultOptions, scope.options);
-                var gauge = new ui.Gauge(element[0], scope.value, scope.options);
+                var gauge = new ui.Gauge(element[0], scope.options);
 
                 scope.$watch('options', function() {
                     var newOptions = angular.merge(defaultOptions, scope.options);
-                    gauge = new ui.Gauge(element[0], scope.value, newOptions);
+                    gauge = new ui.Gauge(element[0], newOptions);
                     drawgauge();
 
                 }, true);
                 var drawgauge = function() {
                     gauge.drawGauge(function() {
                         scope.$apply(function() {
-                            scope.value = value;
                         });
                     });
                 };
