@@ -11,13 +11,13 @@ Inject <code>ui-gauge</code> into angular module
 
 html
 
-{{#markdown}}
+<pre lang="html">
 
-<div ng-app="GaugeDemoApp">
-  <div ng-controller="GaugeCtrl">
-    <ui-gauge options="options"></ui-gauge>
-  </div>
-</div>
+&lt;div ng-app="GaugeDemoApp">
+  &lt;div ng-controller="GaugeCtrl">
+    &lt;ui-gauge options="options">&lt;/ui-gauge>
+  &lt;/div>
+&lt;/div>
 
-{{/markdown}}
+</pre>
 
