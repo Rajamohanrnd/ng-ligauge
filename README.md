@@ -21,3 +21,4 @@ html
 
 </pre>
 
+<a href='http://plnkr.co/edit/s11BtkOsGqXFOUsTuUOT?p=preview' target='_blank'>Plunker example</a>
